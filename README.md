@@ -1,6 +1,6 @@
 # LoginApp
 
-一个基于 Android 原生开发的登录认证示例应用，采用 Clean Architecture 架构，集成了魅族 Flyme 账号体系和设备标识服务。
+一个基于 Android 原生开发的登录认证示例应用，采用 Clean Architecture 架构
 
 ## 技术栈
 
@@ -11,7 +11,6 @@
 - **网络请求**: Retrofit2 + OkHttp
 - **异步处理**: Kotlin Coroutines + Flow
 - **账户管理**: Android AccountManager
-- **设备标识**: 魅族 OAID SDK
 
 ## 项目结构
 
@@ -52,7 +51,6 @@ app/src/main/java/com/example/loginapp/
 - **退出登录**: 清除账户和会话数据
 
 ### 3. 设备标识
-- 集成魅族 OAID SDK
 - 获取设备唯一标识用于埋点分析
 
 ### 4. 架构特点
