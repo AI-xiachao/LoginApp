@@ -79,9 +79,6 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.lifecycle.runtime.compose)
 
-    // OAID
-    implementation("com.meizu.flyme.sdk:openid:1.1.2")
-
     // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

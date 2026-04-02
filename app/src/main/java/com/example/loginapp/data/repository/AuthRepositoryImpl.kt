@@ -199,9 +199,6 @@ class AuthRepositoryImpl @Inject constructor(
             Log.i(TAG, "获取到账户 - 用户ID: ${user.id}, 用户名: ${user.username}")
             Log.d(TAG, "Token信息 - 前缀: ${user.token.take(10)}...")
 
-            // 验证 Token 是否有效（可选：调用后端验证接口）
-            // val valid = apiService.validateToken(user.token).isSuccessful
-
             cachedUser = user
             _authState.value = AuthState.Authenticated(user)
             Log.i(TAG, "会话恢复成功 - 状态已更新为Authenticated")
