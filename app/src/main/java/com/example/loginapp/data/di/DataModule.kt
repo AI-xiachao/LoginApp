@@ -3,6 +3,7 @@ package com.example.loginapp.data.di
 import com.example.loginapp.data.datasource.AccountDataSource
 import com.example.loginapp.data.datasource.AccountDataSourceImpl
 import com.example.loginapp.data.remote.api.AuthApiService
+import com.example.loginapp.data.remote.api.MockAuthApiService
 import com.example.loginapp.data.repository.AuthRepositoryImpl
 import com.example.loginapp.domain.repository.AuthRepository
 import dagger.Binds
@@ -67,8 +68,8 @@ abstract class DataModule {
 
         @Provides
         @Singleton
-        fun provideAuthApiService(retrofit: Retrofit): AuthApiService {
-            return retrofit.create(AuthApiService::class.java)
+        fun provideAuthApiService(): AuthApiService {
+            return MockAuthApiService()
         }
     }
 }

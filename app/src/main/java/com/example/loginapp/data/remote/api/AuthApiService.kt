@@ -24,7 +24,21 @@ interface AuthApiService {
     suspend fun refreshToken(): Response<LoginResponse>
 
     /**
-     * 真实密码登录接口
+     * Mock 登录方法（当前使用）
+     */
+    suspend fun loginWithPassword(
+        accountBelong: String = "meizu",
+        authMode: String = "client_flyme_auth",
+        username: String,
+        password: String,
+        deviceId: String,
+        appVersion: String,
+        grantType: String? = null,
+        signatureParams: Map<String, String> = emptyMap()
+    ): Response<PasswordLoginResponse>
+
+    /*
+     * 真实密码登录接口（已注释，当前使用 Mock）
      *
      * @param accountBelong 账号归属，固定为 "meizu"
      * @param authMode 授权类型，固定为 "client_flyme_auth"
@@ -35,6 +49,7 @@ interface AuthApiService {
      * @param grantType 授权类型，可选 "password"
      * @param signatureParams 签名参数（占位）
      */
+    /*
     @POST("/oauth/new/access_token_password")
     suspend fun loginWithPassword(
         @Query("account_belong") accountBelong: String = "meizu",
@@ -46,4 +61,5 @@ interface AuthApiService {
         @Query("grant_type") grantType: String? = null,
         @QueryMap signatureParams: Map<String, String> = emptyMap()
     ): Response<PasswordLoginResponse>
+    */
 }
